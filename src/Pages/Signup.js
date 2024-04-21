@@ -37,6 +37,7 @@ function Signup() {
 
     try {
       await axios.post(`${API_URL}api/auth/signup`, formData, config);
+      alert('Registered Successfully');
       history.push("/signin");
     } catch (err) {
       if (err.response) {
@@ -45,7 +46,7 @@ function Signup() {
       } else {
         setError("The server did not respond. Please try again later.");
       }
-    }
+    } 
 
     setIsLoading(false);
   };
